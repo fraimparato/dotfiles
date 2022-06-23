@@ -22,19 +22,3 @@ vim.cmd([[
 -- Syntax highlighting & style
 opt.colorcolumn =  {81, 121, 161}
 opt.scrolloff = 15
-
--- OneDark theme settings
-require('onedark').setup {
-    style = 'darker'
-}
-require('onedark').load()
-
--- Lightline theme & settings
-vim.cmd([[
-    let g:lightline = {
-        \ 'colorscheme': 'one',
-        \ }
-]])
-
--- Nvim-tree
-require("nvim-tree").setup()
