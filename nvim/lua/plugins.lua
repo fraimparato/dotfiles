@@ -42,4 +42,10 @@ return require('packer').startup(function()
         require('onedark').load()
     }
 
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate',
+        config = get_setup("treesitter")
+    }
+
 end)
