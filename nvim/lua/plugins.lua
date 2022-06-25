@@ -9,7 +9,6 @@ return require('packer').startup(function()
     -- Packer
     use { 'wbthomason/packer.nvim' }
 
-    -- Lualine, Nvim-tree, Nvim-web-devicons
     use {
         "nvim-lualine/lualine.nvim",
         config = get_setup("lualine"),
@@ -22,12 +21,12 @@ return require('packer').startup(function()
         }
     }
 
-    -- Telescope
     use {
         'nvim-telescope/telescope.nvim',
         requires = { 'nvim-lua/plenary.nvim' },
         --config = get_setup("telescope")
     }
+   
     use {
         'nvim-telescope/telescope-fzf-native.nvim',
        -- config = get_setup("telescope_fzf_native"),
@@ -43,14 +42,12 @@ return require('packer').startup(function()
         require('onedark').load()
     }
 
-    -- Treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
         config = get_setup("treesitter")
     }
 
-    -- Treesitter context (upperline indicating the function in which you're in)
     use { 
         'nvim-treesitter/nvim-treesitter-context',
         require'treesitter-context'.setup{
@@ -68,5 +65,14 @@ return require('packer').startup(function()
             mode = 'cursor'
         }
     }
+
+    use { 'neovim/nvim-lspconfig' }
+    use { 'williamboman/nvim-lsp-installer' }
+
+    local lsp_installer = require("nvim-lsp-installer")
+    lsp_installer.on_server_ready(function(server)
+        local opts = {}
+        server:setup(opts)
+    end)
 
 end)
