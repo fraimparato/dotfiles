@@ -75,4 +75,6 @@ return require('packer').startup(function()
         server:setup(opts)
     end)
 
+    use { 'lervag/vimtex' }
+
 end)
