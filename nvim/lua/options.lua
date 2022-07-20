@@ -14,6 +14,8 @@ opt.expandtab = true
 opt.tabstop = 4
 opt.shiftwidth = 4
 
+opt.clipboard:prepend {"unnamedplus"}
+
 -- Cursor style
 vim.cmd([[
     set guicursor=
